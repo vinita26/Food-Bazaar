@@ -1,6 +1,27 @@
 {
+  "name": "food-bazaar",
+  "description": "Swiggy Clone App",
+  "version": "1.0.0",
+  "main": "App.js",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinita26/Food-Bazaar.git"
+  },
+  "author": "Vinita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinita26/Food-Bazaar/issues"
+  },
+  "homepage": "https://github.com/vinita26/Food-Bazaar#readme"
 }
