@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Header from './src/components/Header';
+import Body from './src/components/Body';
+import Footer from './src/components/Footer';
 
-// const App = () => {
-//     return (
-//     <div>
-//         <h1>Food Bazaar</h1>
-//     </div>
-//     )
-// }
-const heading = React.createElement('h1', {id:"heading"}, "Hello from React !!");
+const App = () => {
+    return (
+    <div>
+        <Header />
+        <Body />
+    </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(heading);
-
-// export default App;
+root.render(<App />);
 

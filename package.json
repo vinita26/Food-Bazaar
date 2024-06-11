@@ -15,7 +15,9 @@
     "last 2 Firefox version"
   ],
   "scripts": {
-    "test": "npm test"
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
