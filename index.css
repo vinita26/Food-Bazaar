@@ -24,12 +24,14 @@
     cursor: pointer;
 }
 
-.res-cards {
+.res-cards,
+.shimmer-container {
     display: flex;
     flex-wrap: wrap;
 }
 
-.res-card {
+.res-card,
+.shimmer-card {
     margin: 20px 20px;
     width: 250px;
     height: 400px;

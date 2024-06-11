@@ -1,3 +1,4 @@
+import Shimmer from './Shimmer';
 import RestaurantCard from './RestaurantCard';
 import { useState, useEffect } from "react";
 
@@ -5,9 +6,10 @@ const Body = () => {
     const [resInfo, setResInfo]  = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState('');
+
     useEffect(()=> {
-          fetchData();
-    },[]);
+        fetchData();
+  },[]);
 
     const fetchData = async () => {
         let headers = new Headers();
@@ -29,8 +31,8 @@ const Body = () => {
     }
 
 console.log('body res', filteredRestaurants)
-    return ( resInfo ?
-      (  <div>
+    return ( filteredRestaurants.length == 0 ? <Shimmer/> :
+       <div>
             <div className='searchBox'>
                 <input type='text' value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}/>
                 <button type='submit' onClick={()=>{
@@ -48,7 +50,7 @@ console.log('body res', filteredRestaurants)
                 {filteredRestaurants.map((restaurant) => ( <RestaurantCard resData={restaurant?.info} />))}
             </div>
             
-        </div>) : null
+        </div>
     )
 }
 
