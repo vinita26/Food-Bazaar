@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
   return (
     <div
       data-testid="resCard"
-      className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200 res-card"
+      className="m-4 p-4 w-[270px] h-[550px] rounded-lg bg-gray-100 hover:bg-gray-200 res-card"
     >
       <img
         className="rounded-lg"
@@ -29,5 +29,13 @@ const RestaurantCard = (props) => {
   );
 };
 
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props)=>{
+    <div>
+      <label className="m-4 p-4 bg-black text-white rounded-lg">Promoted</label>
+      <RestaurantCard {...props}/>
+    </div>
+  }
+}
 
 export default RestaurantCard;

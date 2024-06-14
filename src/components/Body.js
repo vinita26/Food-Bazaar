@@ -1,5 +1,5 @@
 import Shimmer from './Shimmer';
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard , {withPromotedLabel } from './RestaurantCard';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlineStatus';
@@ -12,7 +12,8 @@ const Body = () => {
     useEffect(()=> {
         fetchData();
   },[]);
-
+console.log('res:', filteredRestaurants)
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
     const fetchData = async () => {
         let headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
@@ -46,20 +47,21 @@ const Body = () => {
                   setFilteredRestaurants(filteredRestaurant);
                   console.log('filteredRestaurants', filteredRestaurant)
                     }}>Search</button>
-                <button className='px-4 bg-gray-100 m-4 rounded-lg' onClick={() => {
+                <button className='px-2 bg-gray-100 m-4 rounded-lg dark:bg-pink-300' onClick={() => {
                     const filteredList = resInfo.filter(
                         (res) => res.info.avgRating > 4.5
                     );
                     setFilteredRestaurants(filteredList);
             }}>Top Rated restaurants</button>
             </div>
-            <div className='m-4 p-4 flex flex-wrap'>
+            <div className='px-2 flex flex-wrap'>
                 {filteredRestaurants.map((restaurant) => (
                     <Link
                         key={restaurant?.info.id}
                         to={"/restaurants/" + restaurant?.info.id}
                     >
-                        <RestaurantCard resData={restaurant?.info} />
+                       { restaurant?.info.promoted == false ?<RestaurantCardPromoted /> :<RestaurantCard resData={restaurant?.info} />}
+                        
                     </Link>
             ))}
             </div>
