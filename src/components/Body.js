@@ -12,7 +12,7 @@ const Body = () => {
     useEffect(()=> {
         fetchData();
   },[]);
-console.log('res:', filteredRestaurants)
+
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
     const fetchData = async () => {
         let headers = new Headers();

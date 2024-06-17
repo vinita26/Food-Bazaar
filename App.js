@@ -6,16 +6,26 @@ import About  from "./src/components/About";
 import Contact from "./src/components/Contact";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./src/utils/UserContext.js";
 // import Grocery from './src/components/Grocery';
 
 const Grocery = lazy(()=> import("./src/components/Grocery"));
 
 const AppLayout = () => {
+
+  const [userName, setUserName] = useState();
+
+  useEffect(()=> {
+    const data = {
+      name: 'Vinita Gupta'
+    }
+    setUserName(data.name);
+  },[]);
     return (
-        <>
+        <UserContext.Provider value={{loggedInUser: userName}}>
             <Header />
             <Outlet />
-        </>
+        </UserContext.Provider>
     )
 }
 
