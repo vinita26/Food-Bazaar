@@ -7,7 +7,7 @@ const Header = () => {
     const [btnNameReact,setBtnNameReact] = useState('Login');
     const onlineStatus = useOnlineStatus();
     return (
-        <div className="flex justify-between bg-pink-100">
+        <div className="flex justify-between bg-green-100">
             <div className="logo-container shadow-sm">
                 <img className="w-32" src='https://porky.com/wp-content/uploads/2016/02/food-bazaar.jpg'></img>
             </div>
