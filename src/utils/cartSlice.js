@@ -11,7 +11,13 @@ const cartSlice = createSlice({
             state.items.push(action.payload);
         },
         removeItem: (state,action) => {
-            state.items.pop();
+            console.log('payload', action.payload)
+                state.items.filter((item)=> item.card.info.name === action.payload.card.info.name
+                    // if (item.card.info.name === action.payload.card.info.name ) {
+                    //     console.log('removing')
+                    // }
+                 )
+                 //state.items.pop();
         },
         clearCart: (state,action) => {
             return {items: []};

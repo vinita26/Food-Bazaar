@@ -19,7 +19,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex, dummy }) => {
           <span>⬇️</span>
         </div>
 
-        {showItems && <ItemList items={data.itemCards} dummy={dummy} />}
+        {showItems && <ItemList items={data.itemCards} dummy={dummy} isCartPage={false}/>}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
 
   const data = useContext(UserContext);
+  const userName = data && data.loggedInUser;
   const cartItems = useSelector((store) => store.cart.items);
     const [btnNameReact,setBtnNameReact] = useState('Login');
     const onlineStatus = useOnlineStatus();
@@ -31,20 +32,19 @@ const Header = () => {
                 <li className="px-4">
                   <Link to="/grocery">Grocery</Link>
                 </li>
-                <li className="px-4">
+                <li className="px-4 font-bold">
                   <Link to="/cart">Cart- ({cartItems.length})</Link>
                 </li>
                 <button
                   className="login"
                   onClick={() => {
                     btnNameReact === "Login"
-                      ? setBtnNameReact("Logout")
+                      ? setBtnNameReact(userName || 'Logout')
                       : setBtnNameReact('Login');
                   }}
                 >
                   {btnNameReact}
                 </button>
-                <span>{data && data.loggedInUser}</span>
                 </ul>
             </div>
         </div>

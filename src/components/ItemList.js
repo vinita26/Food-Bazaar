@@ -1,14 +1,19 @@
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
 // import { CDN_URL } from "../utils/constants";
 
-const ItemList = ({ items, dummy }) => {
+const ItemList = ({ items, dummy, isCartPage }) => {
   const CDN_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/';  
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
     // Dispatch an action
     dispatch(addItem(item));
+  };
+
+  const handleRemoveItem = (item) => {
+    // Dispatch an action
+    dispatch(removeItem(item));
   };
 
   return (
@@ -35,9 +40,9 @@ const ItemList = ({ items, dummy }) => {
             <div className="absolute">
               <button
                 className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg"
-                onClick={() => handleAddItem(item)}
+                onClick={() =>isCartPage ? handleRemoveItem(item) : handleAddItem(item)}
               >
-                Add +
+                {isCartPage ? 'Remove -' : 'Add +'}
               </button>
             </div>
             <img src={CDN_URL + item.card.info.imageId} className="w-full" />
