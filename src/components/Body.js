@@ -34,18 +34,18 @@ const Body = () => {
     }
 
     if(onlineStatus == false) return <h1>Looks like you are offline!! Please check your internet connection.</h1>
-    return ( filteredRestaurants.length == 0 ? <Shimmer/> :
+    return ( 
+        // (filteredRestaurants.length == 0) ? <Shimmer/> :
        <div>
             <div className='searchBox m-4 p-4'>
-                <input className='border border-solid border-black' type='text' value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}/>
+                <input data-testid='searchInput' className='border border-solid border-black' type='text' value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}/>
                 <button className='px-4 bg-green-100 m-4 rounded-lg' type='submit' onClick={()=>{
-                    console.log('searchText:',searchText)
+                    
                     const filteredRestaurant = resInfo.filter((res) =>
                     res.info.name.toLowerCase().includes(searchText.toLowerCase())
                   );
     
                   setFilteredRestaurants(filteredRestaurant);
-                  console.log('filteredRestaurants', filteredRestaurant)
                     }}>Search</button>
                 <button className='px-2 bg-gray-100 m-4 rounded-lg dark:bg-pink-300' onClick={() => {
                     const filteredList = resInfo.filter(
