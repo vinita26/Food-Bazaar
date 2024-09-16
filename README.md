@@ -1,24 +1,9 @@
-## html:5 used to generate html file skeleton
-## dev dependencies/ prod dependencies
-## fetch from CDN is not good :
-                        - Costly operation
-                        - Latency(since network extra call takes some time to load)
-                         - have to keep updating cdn react verion number in the url
-# parcel
-    -   Minification
-    -   Hot Module Replacement
-    -   Compression
-    -   Image Optimization
-    -   Buldling
-    -   Caching- Faster Builds
-    -   Code Splitting
-    -   Differential Buldling - supports older browsers
-    -   Error Dignostics
-    -   Consistent Hashing
-    -   Hosting apps on http/ https
-    -   Tree Shaking/ remove unnecessary nodes
+## npm start
 
-# Caret(^)-->Minor version upgrade vs Tilda(~)-->major version upgrade
-# npm-install packages vs npx- execute package
-# npx parcel index.html
-# prod build: npx parcel build index.html(remove main:App.js from package.json else you will get error during build)
+## used parcel for bundling and HMR.
+## fetching restaurant list and food products from Swiggy API
+## added funtionality for searching the restaurant
+## added funtionality to add product to the add and updating global cart items by redux
+## able to remove product from the cart
+## used RTK for state management
+## used Typescript
