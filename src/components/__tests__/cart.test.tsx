@@ -10,17 +10,11 @@ import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import React from "react";
 
-// global.fetch = jest.fn(() =>
-//     Promise.resolve({
-//       json: () => Promise.resolve(MOCK_DATA_NAME),
-//     }),
-//   ) as jest.Mock;
-
-  jest.spyOn(global, "fetch").mockImplementation( 
-    jest.fn(
-      () => Promise.resolve({ json: () => Promise.resolve(MOCK_DATA_NAME),
-    }), 
-  ) as jest.Mock ) 
+//   jest.spyOn(global, "fetch").mockImplementation( 
+//     jest.fn(
+//       () => Promise.resolve({ json: () => Promise.resolve(MOCK_DATA_NAME),
+//     }), 
+//   ) as jest.Mock ) 
 
 it("should Load Restaurant Menu Component", async () => {
   await act(async () =>

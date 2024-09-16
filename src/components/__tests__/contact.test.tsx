@@ -1,24 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import Contact from "../Contact";
+import Contact from "../Contact.tsx";
 import "@testing-library/jest-dom";
 import React from "react";
 
 describe("Contact Us Page Test Case", () => {
-  // beforeAll(() => {
-  //   console.log("Before All");
-  // });
-
-  // beforeEach(() => {
-  //   console.log("Before Each");
-  // });
-
-  // afterAll(() => {
-  //   console.log("After All");
-  // });
-
-  // afterEach(() => {
-  //   console.log("After Each");
-  // });
 
   it("Should load contact us component", () => {
     render(<Contact />);
@@ -34,7 +19,6 @@ describe("Contact Us Page Test Case", () => {
 
     const button = screen.getByRole("button");
 
-    // Assertion
     expect(button).toBeInTheDocument();
   });
 
@@ -43,7 +27,6 @@ describe("Contact Us Page Test Case", () => {
 
     const inputName = screen.getByPlaceholderText("name");
 
-    // Assertion
     expect(inputName).toBeInTheDocument();
   });
 
@@ -52,10 +35,6 @@ describe("Contact Us Page Test Case", () => {
 
     // Querying
     const inputBoxes = screen.getAllByRole("textbox");
-
-    //console.log(inputBoxes.length);
-
-    // Assertion
 
     expect(inputBoxes.length).toBe(2);
   });

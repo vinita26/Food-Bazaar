@@ -1,16 +1,16 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Body from '../Body.js';
+import Body from '../Body.tsx';
 import { act } from "react-dom/test-utils";
 import MOCK_DATA from '../../mocks/mockResListData.json';
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom"
 import React from "react";
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    json: () => Promise.resolve(MOCK_DATA),
-  }),
-) as jest.Mock;
+// global.fetch = jest.fn(() =>
+//   Promise.resolve({
+//     json: () => Promise.resolve(MOCK_DATA),
+//   }),
+// ) as jest.Mock;
 
 beforeAll(()=> {
     console.log('Before All');
