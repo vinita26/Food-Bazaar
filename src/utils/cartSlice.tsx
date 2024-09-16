@@ -12,14 +12,14 @@ const cartSlice = createSlice({
         },
         removeItem: (state,action) => {
             console.log('payload', action.payload)
-                state.items.filter((item)=> item.card.info.name === action.payload.card.info.name
+                state.items.filter((item:any)=> item.card.info.name === action.payload.card.info.name
                     // if (item.card.info.name === action.payload.card.info.name ) {
                     //     console.log('removing')
                     // }
                  )
                  //state.items.pop();
         },
-        clearCart: (state,action) => {
+        clearCart: () => {
             return {items: []};
         }
     }

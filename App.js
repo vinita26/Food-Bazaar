@@ -7,7 +7,7 @@ import Contact from "./src/components/Contact";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import Cart from "./src/components/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import UserContext from "./src/utils/UserContext.js";
+import UserContext from "./src/utils/UserContext.tsx";
 import { Provider } from "react-redux";
 import appStore from "./src/utils/appStore";
 // import Grocery from './src/components/Grocery';

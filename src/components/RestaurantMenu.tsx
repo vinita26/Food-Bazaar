@@ -1,8 +1,9 @@
-import Shimmer from "./Shimmer";
+import Shimmer from "./Shimmer.js";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestrauntMenu.js";
 import RestaurantCategory from "./RestaurantCategory.js";
 import { useState } from "react";
+import React from "react";
 
 const RestaurantMenu = () => {
     console.log('inside menu')
@@ -10,7 +11,7 @@ const RestaurantMenu = () => {
 
   const dummy = "Dummy Data";
 
-  const resInfo = useRestaurantMenu(resId);
+  const resInfo:any = useRestaurantMenu(resId);
 
   const [showIndex, setShowIndex] = useState(null);
 

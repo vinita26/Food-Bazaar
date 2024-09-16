@@ -30,9 +30,6 @@ afterEach(()=> {
 
 
 
-
-
-
 it("Should search RestList with Search input",async ()=>{
   await  act( async () => render(<BrowserRouter><Body /></BrowserRouter>))
 

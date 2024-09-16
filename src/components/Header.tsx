@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import React from "react";
 const Header = () => {
 
   const data = useContext(UserContext);
   const userName = data && data.loggedInUser;
-  const cartItems = useSelector((store) => store.cart.items);
+  const cartItems = useSelector((store:any) => store.cart.items);
     const [btnNameReact,setBtnNameReact] = useState('Login');
     const onlineStatus = useOnlineStatus();
     return (
